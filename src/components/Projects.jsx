@@ -24,7 +24,7 @@ const Projects = () => {
       image: Portfolioimg,
       tech: ["React", "Tailwind", "Vite"],
       github: "https://github.com/Mehran3356/Personal-Portfolio-Website",
-      demo: "personal-portfolio-website-green-kappa.vercel.app",
+      demo: "https://personal-portfolio-website-green-kappa.vercel.app/",
     },
   ];
   return (
