@@ -23,8 +23,8 @@ const Projects = () => {
       description: "A personal portfolio built using React, Tailwind, Vite, and hosted on Vercel. Includes animated sections, scrollspy navbar, resume, and responsive design.",
       image: Portfolioimg,
       tech: ["React", "Tailwind", "Vite"],
-      github: "https://github.com/yourusername/project1",
-      demo: "https://project1-demo.com",
+      github: "https://github.com/Mehran3356/Personal-Portfolio-Website",
+      demo: "personal-portfolio-website-green-kappa.vercel.app",
     },
   ];
   return (
