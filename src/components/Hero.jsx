@@ -11,8 +11,12 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-8 items-center">
           <motion.div
-            initial={{ y: 40, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            variants={{
+              hidden: { y: 40, opacity: 0 },
+              visible: { y: 0, opacity: 1 },
+            }}
+            initial="hidden"
+            animate="visible"
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative"
           >
@@ -25,7 +29,7 @@ const Hero = () => {
             </h1>
             <p className="mt-4 text-gray-300 text-2xl sm:text-xl leading-relaxed text-center md:text-left max-w-xl mx-auto">
               I am a {""}
-               <span className="text-blue-400 font-semibold">
+              <span className="text-blue-400 font-semibold">
                 <Typewriter
                   words={[
                     "MERN-stack Developer",
@@ -44,13 +48,17 @@ const Hero = () => {
             </p>
 
             {/* <p className="mt-4 ml-5 text-lg max-w-xl text-gray-300 leading-relaxed">
-              MERN-stack developer building clean, user-friendly web apps.I
-              focus on frontend interfaces, performance and developer
-              experience.
-            </p> */}
+                MERN-stack developer building clean, user-friendly web apps.I
+                focus on frontend interfaces, performance and developer
+                experience.
+              </p> */}
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
+              variants={{
+                hidden: { y: 20, opacity: 0 },
+                visible: { y: 0, opacity: 1 },
+              }}
+              initial="hidden"
+              animate="visible"
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mt-8 ml-5 flex flex-wrap gap-5"
             >
