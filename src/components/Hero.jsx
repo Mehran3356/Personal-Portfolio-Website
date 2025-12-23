@@ -3,6 +3,29 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 
 const Hero = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.18,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { y: 28, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.75,
+        ease: [0.22, 1, 0.36, 1], // premium easing
+      },
+    },
+  };
+
   return (
     <section
       id="hero"
@@ -11,23 +34,26 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 lg:gap-8 items-center">
           <motion.div
-            variants={{
-              hidden: { y: 40, opacity: 0 },
-              visible: { y: 0, opacity: 1 },
-            }}
+            variants={containerVariants}
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.9, ease: "easeOut" }}
             className="relative"
           >
             <span className="absolute left-0 top-0 h-full w-[3px] bg-blue-500/60 rounded-full hidden sm:block"></span>
-            <h1 className="text-4xl sm:text-5xl ml-5 md:text-6xl font-bold leading-tight tracking-tight">
+            <motion.h1
+              variants={containerVariants}
+              className="text-4xl sm:text-5xl ml-5 md:text-6xl font-bold leading-tight tracking-tight"
+            >
               Hi, I'm
               <span className="text-transparent ml-2 bg-clip-text bg-linear-to-r from-blue-400 to-purple-500 ">
                 Muhammad Mehran
               </span>
-            </h1>
-            <p className="mt-4 text-gray-300 text-2xl sm:text-xl leading-relaxed text-center md:text-left max-w-xl mx-auto">
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="mt-4 text-gray-300 text-2xl sm:text-xl leading-relaxed text-center md:text-left max-w-xl mx-auto"
+            >
               I am a {""}
               <span className="text-blue-400 font-semibold">
                 <Typewriter
@@ -45,7 +71,7 @@ const Hero = () => {
                   delaySpeed={2000}
                 />
               </span>
-            </p>
+            </motion.p>
 
             {/* <p className="mt-4 ml-5 text-lg max-w-xl text-gray-300 leading-relaxed">
                 MERN-stack developer building clean, user-friendly web apps.I
@@ -53,12 +79,7 @@ const Hero = () => {
                 experience.
               </p> */}
             <motion.div
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1 },
-              }}
-              initial="hidden"
-              animate="visible"
+              variants={itemVariants}
               transition={{ delay: 0.4, duration: 0.6 }}
               className="mt-8 ml-5 flex flex-wrap gap-5"
             >
@@ -84,7 +105,11 @@ const Hero = () => {
             <motion.div
               initial={{ scale: 0.92, opacity: 0, y: 12 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.8, ease: "easeOut" }}
+              transition={{
+                delay: 0.45,
+                duration: 0.9,
+                ease: [0.22, 1, 0.36, 1],
+              }}
               className="w-64 h-64 sm:w-60 sm:h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full border border-gray-700/60 bg-gray-800/30 shadow-2xl backdrop-blur-sm flex items-center justify-center overflow-hidden hover:scale-105 transition-transform text-sm"
               aria-hidden="true"
             >
